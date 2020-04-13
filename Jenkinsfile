@@ -4,7 +4,9 @@ pipeline {
         stage('Upload to AWS.') {
             steps {
                 sh 'echo "Running AWS Upload to S3 Bucket..."'
-                s3Upload(file:'index.html', bucket:'jenkinsbucket122', path:'path/to/target/index.html')
+                withAWS(credentials:'IDofAwsCredentials') {
+                    s3Upload(file:'index.html', bucket:'jenkinsbucket122', path:'path/to/target/index.html')
+                }
             }
         }
     }
