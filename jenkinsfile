@@ -1,14 +1,14 @@
 pipeline {
         agent any
-            stages {
+                stages {
                 stage('Build') {
-                    steps {
-                        sh 'echo "Hellow World"'
-                        sh'''
-                            echo "Multinline shell steps works too"
-                            ls -lah
-                        '''
-                    }
-                }
-            }
+                        steps {
+                                sh 'echo "Hellow World"'
+                                sh'''
+                                echo "Multinline shell steps works too"
+                                ls -lah
+                               '''
+                       }
+               }
+       }
 }
