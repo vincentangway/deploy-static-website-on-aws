@@ -4,6 +4,7 @@ pipeline {
         stage('Linting HTML') {
             steps {
                 sh 'echo "Running Tidy HTML..."'
+                sh 'tidy -q -e *.html'
             }
         }
         stage('Upload to AWS.') {
